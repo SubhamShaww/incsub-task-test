@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+:root {
+  --theme-black-color: #424242;
+  --theme-blue-color: #296efa;
+  --theme-white-color: #fff;
+  --theme-grey-color: #f9f9f9;
+  --theme-light-white-color: #e4ecfe;
+  --theme-medium-grey-color: #808080;
+  --theme-light-grey-color: #ededed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.highlight-links {
+  color: var(--theme-blue-color);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.circle-icon {
+  height: 0.25rem;
+  width: 0.25rem;
+  background-color: var(--theme-black-color);
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  line-height: 1.5;
+}
+
+.app__left {
+  flex: 0.7;
+  color: var(--theme-black-color);
+  background-color: var(--theme-grey-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2% 5% 5% 5%;
+}
+
+.app__left > .steps {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 0.75rem;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: x-small;
+  font-weight: bold;
+}
+
+.app__left > .details {
+  margin: 5% auto;
+  width: 50%;
+}
+
+.app__left .details__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app__left .signin-info{
+  font-size: smaller;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+.app__left form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.app__left .form-input:focus, .app__left .form-select:focus, .app__left button:focus {
+  outline: none;
+}
+
+.app__left .label-group {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--theme-light-grey-color);
+  background-color: var(--theme-white-color);
+}
+
+.app__left .label-group > label {
+  position:absolute;
+  font-size: 0.75rem;
+  top: -8px;
+  left: 20px;
+  color: var(--theme-medium-grey-color);
+  background-color: var(--theme-grey-color);
+}
+
+.app__left form .error-message {
+  color: red;
+  font-size: 0.75rem;
+}
+
+.app__left form .error-border {
+  border-color: red;
+}
+
+.app__left .label-group>input {
+  width: 100%;
+  border: none;
+  font-size: 0.75rem;
+}
+
+.app__left form .select-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--theme-white-color);
+  border: 1px solid var(--theme-light-grey-color);
+}
+
+.app__left form .form-select {
+  color: var(--theme-medium-grey-color);
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  font-size: 0.75rem;
+  border: none;
+}
+
+.app__left form .select-wrapper > .arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  top: 30%;
+  right: 0.65rem;
+  z-index: 0;
+}
+
+.app__left form > .label-group > .eye-icon {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 35%;
+  right: 0.75rem;
+  cursor: pointer;
+}
+
+.app__left form > button {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  color: var(--theme-white-color);
+  background-color: var(--theme-blue-color);
+  border: 1px solid var(--theme-light-grey-color);
+  cursor: pointer;
+}
+
+.app__left form > button:disabled {
+  color: var(--theme-medium-grey-color);
+  background-color: var(--theme-light-grey-color);
+}
+
+.app__left form > .password-min {
+  font-size: x-small;
+  color: var(--theme-medium-grey-color);
+  margin-bottom: 1rem;
+}
+
+.app__left .disclaimer{
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.app__right {
+  flex: 0.3;
+  color: var(--theme-white-color);
+  background-color: var(--theme-blue-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.app__right > h2 {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__right > p {
+  text-align: left;
+  color: var(--theme-light-white-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+  width: 80%;
 }

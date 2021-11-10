@@ -29,8 +29,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
   line-height: 1.5;
 }
 
@@ -202,4 +201,10 @@
   font-size: 0.9rem;
   font-weight: 400;
   width: 80%;
+}
+
+@media screen and (max-width: 425px) {
+  .app {
+    flex-direction: column;
+  }
 }
